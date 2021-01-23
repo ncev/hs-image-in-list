@@ -5,7 +5,7 @@ import Data.Maybe
 
 matchBytestringTypes :: B.ByteString -> [String]
 matchBytestringTypes input = mapMaybe ($ input)
-    [testJpeg
+    [ testJpeg
     , testPng
     , testGif
     , testTiff
