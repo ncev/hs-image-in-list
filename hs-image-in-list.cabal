@@ -34,6 +34,9 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , bytestring
+    , image-type
+    , http-conduit
   default-language: Haskell2010
 
 executable hs-image-in-list-exe
@@ -58,5 +61,8 @@ test-suite hs-image-in-list-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , hspec
+    , bytestring
     , hs-image-in-list
+    , http-conduit
   default-language: Haskell2010

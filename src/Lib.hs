@@ -1,6 +1,20 @@
-module Lib
-    ( someFunc
-    ) where
+module Lib where
+import Codec.ImageType
+import  qualified Data.ByteString as B
+import Data.Maybe
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+matchBytestringTypes :: B.ByteString -> [String]
+matchBytestringTypes input = mapMaybe ($ input)
+    [testJpeg
+    , testPng
+    , testGif
+    , testTiff
+    , testRgb
+    , testPbm
+    , testPgm
+    , testPpm
+    , testRast
+    , testXbm
+    , testBmp
+    , testWebp
+    , testExr]
